@@ -1,7 +1,7 @@
 ---
 title: "Lab 02 - Plastic waste"
 author: "Maude Dagenais"
-date: "15/09/2025"
+date: "22/09/2025"
 ---
 
 ## Chargement des packages et des données
@@ -43,25 +43,25 @@ Colour et Fill sont basés sur les données, alors que alpha est une caractéris
 Boxplot:
 
 ```{r plastic-waste-boxplot}
-# insert code here
+ggplot(plastic_waste, aes(x=continent, y=plastic_waste_per_cap)) + geom_boxplot() + labs(x="Continent", y="Plastique", title="Quantité de déchets par continent")
 ```
 
 Violin plot:
 
 ```{r plastic-waste-violin}
-# insert code here
+ggplot(plastic_waste, aes(x=continent, y=plastic_waste_per_cap)) + geom_violin() + labs(x="Continent", y="Plastique", title="Quantité de déchets par continent")
 ```
 
-Réponse à la question...
+Les violon plots permettent de la voir la distribution des données, alors que les box plots montrent seulement la médiane. 
 
 ### Exercise 4
 
 
 ```{r plastic-waste-mismanaged}
-# insert code here
+ggplot(plastic_waste, aes(x=plastic_waste_per_cap, y=mismanaged_plastic_waste_per_cap, colour=continent)) + geom_point() + labs(x="Déchets/Habitant (kg/jour)", y="Déchets non-gérés/Habitant (kg/jour)", title="Déchets gérés vs déchets non-gérés en kg/jour")
 ```
 
-Réponse à la question...
+Il y a une tendance par continent mais pas entre les continents. 
 
 ### Exercise 5
 
